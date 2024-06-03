@@ -18,7 +18,7 @@ struct ContentView: View {
                     LazyVGrid(columns: twocolumns){
                         ForEach(allArtworks) {currentArtwork in
                             FamousWorks(artWork: currentArtwork)
-                        }
+                            }
                     }
                 }
             }
