@@ -17,7 +17,7 @@ struct ContentView: View {
                 ScrollView(.vertical){
                     LazyVGrid(columns: twocolumns){
                         ForEach(allArtworks) {currentArtwork in
-                            FamousWorks(artWork: currentArtwork)
+                            FamousWorksView(artWork: currentArtwork)
                             }
                     }
                 }
@@ -25,16 +25,6 @@ struct ContentView: View {
         }
         .navigationTitle("Search for Works")
         .searchable(text: $searchText)
-        .toolbar{
-            ToolbarItem(placement:.topBarLeading){
-                Button("Cancel"){
-                }
-            }
-            ToolbarItem(placement:.topBarTrailing){
-                    Button("Done"){
-                    }
-            }
-        }
            
         }
     }

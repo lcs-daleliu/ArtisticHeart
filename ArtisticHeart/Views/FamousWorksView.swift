@@ -1,5 +1,5 @@
 //
-//  FamousWorks.swift
+//  FamousWorksView.swift
 //  ArtisticHeart
 //
 //  Created by Yiren LIU on 2024-05-26.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FamousWorks: View {
+struct FamousWorksView: View {
     let artWork:Works
     var body: some View {
         ZStack{
@@ -30,5 +30,5 @@ struct FamousWorks: View {
 }
 
 #Preview {
-    FamousWorks(artWork: WhistlersMother)
+    FamousWorksView(artWork: WhistlersMother)
 }
