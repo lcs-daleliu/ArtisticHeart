@@ -21,11 +21,11 @@ struct IndexView: View {
         .frame(width: 270, height: 280)
         .background(
             Rectangle()
-                .opacity(0.1)
+                .opacity(0.05)
                 .cornerRadius(20))
     }
 }
 
 #Preview {
-    IndexView(index: index4)
+    IndexView(index: index1)
 }

@@ -32,7 +32,7 @@ struct IntroductionView: View {
                     .frame(width: 120, height: 130)
             }
             if (selectedTab != 0) {
-                TabView(selection:$selectedTab){
+                TabView {
                     IndexView(index: index1)
                         .tag(1)
                     IndexView(index: index2)
@@ -44,6 +44,8 @@ struct IntroductionView: View {
                    
                 }
                 .border(.red)
+                .tabViewStyle(.page)
+                .indexViewStyle(.page(backgroundDisplayMode: .always))
                 
             }
             

@@ -25,8 +25,6 @@ struct HomePageView: View {
                 Text("My Favorites")
                     .font(.title2)
                     .bold()
-                // Mark:This still works, but is not straight forward enough
-                //                ForEach(allArtworks.filter{$0.isFarvorite})
                 ScrollView(.vertical) {
                     LazyVGrid(columns: twocolumns){
                         ForEach(allArtworks.filter{painting in painting.isFarvorite}){ currentArtWork in
