@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct IndexView: View {
-    @Binding var index: indexBox
+    let index: indexBox
     var body: some View {
         VStack{
             Image(index.indexImage)
@@ -16,15 +16,16 @@ struct IndexView: View {
                 .frame(width: 130, height: 130)
             Text(index.introduction)
                 .padding(.horizontal)
+               
         }
-        .frame(width: 270, height: 270)
+        .frame(width: 270, height: 280)
         .background(
             Rectangle()
-                .opacity(0.2)
+                .opacity(0.1)
                 .cornerRadius(20))
     }
 }
 
 #Preview {
-    IndexView(index: .constant(index1))
+    IndexView(index: index4)
 }
