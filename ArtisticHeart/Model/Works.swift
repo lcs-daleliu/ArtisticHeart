@@ -56,7 +56,7 @@ let index1 = indexBox(indexImage: "Brush", introduction: "Use different types of
 
 let index2 = indexBox(indexImage: "Palette", introduction: "Blend your desired colors on the palette and save!")
 
-let index3 = indexBox(indexImage: "Search", introduction: "You can share your completed works to our interactive platform, and user can search for the corresponding portfolio by searching for the author, type and title of the works.")
+let index3 = indexBox(indexImage: "Search", introduction: "Search for works you would like to favorite!")
 
 let index4 = indexBox(indexImage: "Star", introduction: "You can save your favorite works to your home page for fast browsing!")
 

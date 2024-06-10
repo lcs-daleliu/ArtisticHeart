@@ -35,15 +35,19 @@ struct IntroductionView: View {
                 TabView {
                     IndexView(index: index1)
                         .tag(1)
+                       
                     IndexView(index: index2)
                         .tag(2)
+                        
                     IndexView(index: index3)
                         .tag(3)
+                       
                     IndexView(index: index4)
                         .tag(4)
-                   
+                        
+
                 }
-                .border(.red)
+//                .border(.red)
                 .tabViewStyle(.page)
                 .indexViewStyle(.page(backgroundDisplayMode: .always))
                 
@@ -51,23 +55,24 @@ struct IntroductionView: View {
             
             // Experimental Code
 //            Text("\(selectedTab)")
-            if (selectedTab >= 4){
+            if (selectedTab == 0){
+                Button(action: {selectedTab += 1}, label: {
+                     Text("Continue")
+                         .font(.custom(
+                             "AmericanTypewriter",
+                             fixedSize: 30))
+                     .bold()})
+
+            } else {
                 NavigationLink{
                     HomePageView()
                 }label: {
-                    Text("Continue")
+                    Text("Skip to home")
                         .font(.custom(
                             "AmericanTypewriter",fixedSize: 30))
                     .bold()}
             }
-            else{
-               Button(action: {selectedTab += 1}, label: {
-                    Text("Continue")
-                        .font(.custom(
-                            "AmericanTypewriter",
-                            fixedSize: 30))
-                    .bold()})
-            }
+
         }
         
     }

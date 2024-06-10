@@ -10,19 +10,21 @@ import SwiftUI
 struct IndexView: View {
     let index: indexBox
     var body: some View {
-        VStack{
-            Image(index.indexImage)
-                .resizable()
-                .frame(width: 130, height: 130)
-            Text(index.introduction)
-                .padding(.horizontal)
-               
-        }
-        .frame(width: 270, height: 280)
-        .background(
-            Rectangle()
-                .opacity(0.05)
-                .cornerRadius(20))
+        RoundedRectangle(cornerRadius: 20)
+            .foregroundStyle(Color.secondary)
+            .opacity(0.05)
+            .overlay {
+                
+                VStack {
+                    Image(index.indexImage)
+                        .resizable()
+                        .frame(width: 130, height: 130)
+                    Text(index.introduction)
+                        .frame(width:235)
+                }
+                
+            }
+            .padding(20)
     }
 }
 

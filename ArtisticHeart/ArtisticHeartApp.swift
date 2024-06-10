@@ -18,15 +18,15 @@ struct ArtisticHeartApp: App {
                             systemName: "house")
                         Text("Home")
                     }
-                ContentView()
+                SearchView()
                     .tabItem {
                         Image(systemName: "magnifyingglass")
                         Text("Search")
                     }
-                Text("Draw Now")
+                DrawingView()
                     .tabItem {
                         Image(systemName: "hand.draw")
-                        Text("Draw Now")
+                        Text("Draw")
                     }
             }
         }

@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  SearchView.swift
 //  ArtisticHeart
 //
 //  Created by Yiren LIU on 2024-05-24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct SearchView: View {
     @State var searchText = ""
     let twocolumns  = [GridItem(), GridItem()]
     var body: some View {
@@ -31,5 +31,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    SearchView()
 }
