@@ -9,25 +9,34 @@ import SwiftUI
 
 struct SearchView: View {
     @State var searchText = ""
+    @State var all:[Works] = allArtworks
     let twocolumns  = [GridItem(), GridItem()]
     var body: some View {
         NavigationStack{
-        ZStack {
-            VStack {
-                ScrollView(.vertical){
-                    LazyVGrid(columns: twocolumns){
-                        ForEach(allArtworks) {currentArtwork in
-                            FamousWorksView(artWork: currentArtwork)
+            ScrollView(.vertical){
+                LazyVGrid(columns: twocolumns){
+                    ForEach($all) {$currentArtwork in
+                        NavigationLink{
+                            DetailView(Art:$currentArtwork)}label:{
+                                FamousWorksView(artWork: currentArtwork)
+                                
                             }
+                            .foregroundColor(.black)
+                        
                     }
                 }
             }
+            .navigationTitle("Search for Works")
+            .searchable(text: $searchText)
         }
-        .navigationTitle("Search for Works")
-        .searchable(text: $searchText)
-           
-        }
+        
+        
+        
+        
+        
     }
+    
+    
 }
 
 #Preview {
