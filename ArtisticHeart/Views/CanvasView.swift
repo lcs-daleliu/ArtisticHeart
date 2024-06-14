@@ -30,6 +30,7 @@ struct CanvasView: UIViewRepresentable {
     func updateUIView(_ uiView: PKCanvasView, context: Context) {
         uiView.tool = drawing ? ink : eraser
     }
-    
+
 }
+
 

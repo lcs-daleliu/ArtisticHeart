@@ -8,28 +8,35 @@
 import SwiftUI
 
 struct DetailView: View {
-    @Binding var Art: Works
+    @Binding var currentArtwork: Work
     var body: some View {
         NavigationStack{
                 VStack{
-                    Image(Art.workImage)
-                        .resizable()
-                        .frame(height:300)
+                    if let workImage = currentArtwork.workImage {
+                        Image(workImage)
+                            .resizable()
+                            .frame(height:300)
+                    } else {
+                        // Placeholder image
+                        Image(systemName: "person")
+                            .resizable()
+                            .frame(height:300)
+                    }
                     ScrollView(.vertical) {
                         VStack(alignment: .leading){
-                            Text("By: "+Art.author)
-                            Text("Year Created: "+Art.yearCreated)
+                            Text("By: "+currentArtwork.author)
+                            Text("Year Created:" + "\(currentArtwork.yearCreated)")
                                 .padding(.vertical)
-                            Text("Description: "+Art.description)
+                            Text("Description: "+currentArtwork.description)
                         }
                         .padding()
                     }
                 }
-                .navigationTitle(Art.workTitle)
+                .navigationTitle(currentArtwork.workTitle)
                 .toolbar{
                     ToolbarItem(placement:.topBarTrailing){
-                        Button(action:{Art.isFarvorite.toggle()}){
-                            Image(systemName: Art.isFarvorite ? "star.fill" : "star")
+                        Button(action:{currentArtwork.isFavorite.toggle()}){
+                            Image(systemName: currentArtwork.isFavorite ? "star.fill" : "star")
                         }
                     }
                 }
@@ -40,6 +47,6 @@ struct DetailView: View {
     }
 }
 
-#Preview {
-    DetailView(Art:.constant(MonaLisa))
-}
+//#Preview {
+//    DetailView(Art:.constant(MonaLisa))
+//}

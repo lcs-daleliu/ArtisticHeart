@@ -33,18 +33,18 @@ struct IntroductionView: View {
             }
             if (selectedTab != 0) {
                 TabView {
-                    IndexView(index: index1)
-                        .tag(1)
-                       
-                    IndexView(index: index2)
-                        .tag(2)
-                        
-                    IndexView(index: index3)
-                        .tag(3)
-                       
-                    IndexView(index: index4)
-                        .tag(4)
-                        
+//                    IndexView(index: index1)
+//                        .tag(1)
+//                       
+//                    IndexView(index: index2)
+//                        .tag(2)
+//                        
+//                    IndexView(index: index3)
+//                        .tag(3)
+//                       
+//                    IndexView(index: index4)
+//                        .tag(4)
+//                        
 
                 }
 //                .border(.red)

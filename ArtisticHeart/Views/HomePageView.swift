@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomePageView: View {
-    @State var all:[Works] = allArtworks
+    @State private var viewModel = HomePageViewModel()
     let twocolumns  = [GridItem(spacing:20), GridItem(spacing:20)]
     var body: some View {
         NavigationStack{
@@ -28,11 +28,14 @@ struct HomePageView: View {
                     .bold()
                 ScrollView(.vertical) {
                     LazyVGrid(columns: twocolumns){
-                        ForEach($all.filter{painting in painting.isFarvorite.wrappedValue}){ $currentArtWork in
+                        ForEach($viewModel.works.filter{drawing in drawing.isFavorite.wrappedValue}){ $currentArtWork in
                             NavigationLink{
-                                DetailView(Art: $currentArtWork)}label:{
+                                DetailView(currentArtwork: $currentArtWork)}label:{
                                 FamousWorksView(artWork: currentArtWork)
                             }
+                        }
+                        ForEach(viewModel.works) { work in
+                            Text(work.workTitle)
                         }
                     }
                 }

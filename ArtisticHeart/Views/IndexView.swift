@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct IndexView: View {
-    let index: indexBox
+    let index: IndexBox
     var body: some View {
         RoundedRectangle(cornerRadius: 20)
             .foregroundStyle(Color.secondary)
@@ -28,6 +28,6 @@ struct IndexView: View {
     }
 }
 
-#Preview {
-    IndexView(index: index1)
-}
+//#Preview {
+//    IndexView(index: index1)
+//}

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchView: View {
     @State var searchText = ""
-    @State var all:[Works] = allArtworks
+    @State var all:[Work] = []
     let twocolumns  = [GridItem(), GridItem()]
     var body: some View {
         NavigationStack{
@@ -17,7 +17,7 @@ struct SearchView: View {
                 LazyVGrid(columns: twocolumns){
                     ForEach($all) {$currentArtwork in
                         NavigationLink{
-                            DetailView(Art:$currentArtwork)}label:{
+                            DetailView(currentArtwork:$currentArtwork)}label:{
                                 FamousWorksView(artWork: currentArtwork)
                                 
                             }
