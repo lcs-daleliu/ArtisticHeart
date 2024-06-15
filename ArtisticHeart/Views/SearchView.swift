@@ -9,15 +9,17 @@ import SwiftUI
 
 struct SearchView: View {
     @State var searchText = ""
-    @State var all:[Work] = []
+    @State private var viewModel = HomePageViewModel()
     let twocolumns  = [GridItem(), GridItem()]
     var body: some View {
         NavigationStack{
             ScrollView(.vertical){
                 LazyVGrid(columns: twocolumns){
-                    ForEach($all) {$currentArtwork in
+                    ForEach(viewModel.works) { currentArtwork in
                         NavigationLink{
-                            DetailView(currentArtwork:$currentArtwork)}label:{
+                            DetailView(currentArtwork:currentArtwork)
+                                .environment(viewModel)
+                        }label:{
                                 FamousWorksView(artWork: currentArtwork)
                                 
                             }
@@ -28,6 +30,11 @@ struct SearchView: View {
             }
             .navigationTitle("Search for Works")
             .searchable(text: $searchText)
+                        .onChange(of: searchText) {
+                            Task {
+                                try await viewModel.filterWorks(on: searchText)
+                            }
+                        }
         }
         
         

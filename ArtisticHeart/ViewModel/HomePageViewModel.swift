@@ -37,4 +37,33 @@ class HomePageViewModel {
         }
         
     }
+    
+    func filterWorks(on searchTerm: String) async throws {
+            
+            if searchTerm.isEmpty {
+                
+                Task {
+                    try await getWorks()
+                }
+                
+            } else {
+                
+                do {
+                    let results: [Work] = try await supabase
+                        .from("artworks")
+                        .select()
+                        .ilike("work_title", pattern: "%\(searchTerm)%")
+                        .order("id", ascending: true)
+                        .execute()
+                        .value
+                    
+                    self.works = results
+                    
+                } catch {
+                    debugPrint(error)
+                }
+                
+            }
+            
+        }
 }

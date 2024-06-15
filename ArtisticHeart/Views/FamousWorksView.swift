@@ -16,9 +16,17 @@ struct FamousWorksView: View {
                 .fill(backGroundGray)
                 .frame(width: 180, height:190)
             VStack{
-                Image(artWork.workImage)
-                    .resizable()
-                    .frame(width: 140,height: 90)
+                if let workImage = artWork.workImage {
+                    Image(workImage)
+                        .resizable()
+                        .frame(height:100)
+                        .padding(.horizontal)
+                } else {
+                    // Placeholder image
+                    Image(systemName: "person")
+                        .resizable()
+                        .frame(height:300)
+                }
                 VStack(alignment: .leading) {
                     Text(artWork.workTitle)
                         .bold()

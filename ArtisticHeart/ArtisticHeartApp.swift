@@ -11,24 +11,7 @@ import SwiftUI
 struct ArtisticHeartApp: App {
     var body: some Scene {
         WindowGroup {
-            TabView {
-                HomePageView()
-                    .tabItem {
-                        Image(
-                            systemName: "house")
-                        Text("Home")
-                    }
-                SearchView()
-                    .tabItem {
-                        Image(systemName: "magnifyingglass")
-                        Text("Search")
-                    }
-                DrawingView()
-                    .tabItem {
-                        Image(systemName: "hand.draw")
-                        Text("Draw")
-                    }
-            }
+            AppEntryView()
         }
     }
 }

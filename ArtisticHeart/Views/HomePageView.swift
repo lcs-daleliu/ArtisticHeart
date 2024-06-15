@@ -30,12 +30,10 @@ struct HomePageView: View {
                     LazyVGrid(columns: twocolumns){
                         ForEach($viewModel.works.filter{drawing in drawing.isFavorite.wrappedValue}){ $currentArtWork in
                             NavigationLink{
-                                DetailView(currentArtwork: $currentArtWork)}label:{
+                                DetailView(currentArtwork: currentArtWork)
+                                .environment(viewModel)}label:{
                                 FamousWorksView(artWork: currentArtWork)
                             }
-                        }
-                        ForEach(viewModel.works) { work in
-                            Text(work.workTitle)
                         }
                     }
                 }

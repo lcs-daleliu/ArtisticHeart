@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct IntroductionView: View {
+    @Binding var welcomeToMyApp: Bool
     @State private var selectedTab = 0
     var body: some View {
         NavigationStack{
@@ -26,6 +27,7 @@ struct IntroductionView: View {
                         .padding(.leading,110)
                         .bold()
                 }
+                .padding(.top,60)
                 
                 Image("Pencil")
                     .resizable()
@@ -33,51 +35,56 @@ struct IntroductionView: View {
             }
             if (selectedTab != 0) {
                 TabView {
-//                    IndexView(index: index1)
-//                        .tag(1)
-//                       
-//                    IndexView(index: index2)
-//                        .tag(2)
-//                        
-//                    IndexView(index: index3)
-//                        .tag(3)
-//                       
-//                    IndexView(index: index4)
-//                        .tag(4)
-//                        
-
+                    IndexView(index: index1)
+                        .tag(1)
+                    
+                    IndexView(index: index2)
+                        .tag(2)
+                    
+                    IndexView(index: index3)
+                        .tag(3)
+                    
+                    IndexView(index: index4)
+                        .tag(4)
+                    //
+                    
                 }
-//                .border(.red)
+                //                .border(.red)
                 .tabViewStyle(.page)
                 .indexViewStyle(.page(backgroundDisplayMode: .always))
                 
             }
             
             // Experimental Code
-//            Text("\(selectedTab)")
+            //            Text("\(selectedTab)")
             if (selectedTab == 0){
                 Button(action: {selectedTab += 1}, label: {
-                     Text("Continue")
-                         .font(.custom(
-                             "AmericanTypewriter",
-                             fixedSize: 30))
-                     .bold()})
-
+                    VStack {
+                        Spacer()
+                        Text("Continue")
+                            .font(.custom(
+                                "AmericanTypewriter",
+                                fixedSize: 30))
+                            .foregroundColor(.black)
+                            .bold()
+                    }})
+                
             } else {
-                NavigationLink{
-                    HomePageView()
-                }label: {
+                //                    HomePageView()
+                Button(action:{welcomeToMyApp.toggle()},
+                       label: {
                     Text("Skip to home")
                         .font(.custom(
                             "AmericanTypewriter",fixedSize: 30))
-                    .bold()}
+                        .foregroundColor(.black)
+                        .bold()
+                })
+                
             }
-
         }
-        
+        }
     }
-}
-
-#Preview {
-    IntroductionView()
-}
+    
+    //#Preview {
+    //    IntroductionView()
+    //}

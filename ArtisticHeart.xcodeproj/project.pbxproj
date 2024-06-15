@@ -27,6 +27,8 @@
 		3BDE00CD2C1B18AE002D1DA2 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 3BDE00CC2C1B18AE002D1DA2 /* Storage */; };
 		3BDE00CF2C1B18AE002D1DA2 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 3BDE00CE2C1B18AE002D1DA2 /* Supabase */; };
 		3BDE00D22C1B19E4002D1DA2 /* HomePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE00D12C1B19E4002D1DA2 /* HomePageViewModel.swift */; };
+		3BDE00D62C1D1D7F002D1DA2 /* AppEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE00D52C1D1D7F002D1DA2 /* AppEntryView.swift */; };
+		3BDE00D82C1D2374002D1DA2 /* TabSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE00D72C1D2374002D1DA2 /* TabSwitchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		3B8FB6272C06A725005562A1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		3BDE00C12C1B188E002D1DA2 /* Supabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supabase.swift; sourceTree = "<group>"; };
 		3BDE00D12C1B19E4002D1DA2 /* HomePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewModel.swift; sourceTree = "<group>"; };
+		3BDE00D52C1D1D7F002D1DA2 /* AppEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEntryView.swift; sourceTree = "<group>"; };
+		3BDE00D72C1D2374002D1DA2 /* TabSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSwitchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,8 @@
 				3B2F528D2C0E8B0900158EAD /* HomePageView.swift */,
 				3B2F528F2C0E924D00158EAD /* IntroductionView.swift */,
 				3B2F52912C0E95E200158EAD /* IndexView.swift */,
+				3BDE00D72C1D2374002D1DA2 /* TabSwitchView.swift */,
+				3BDE00D52C1D1D7F002D1DA2 /* AppEntryView.swift */,
 				3B2F52952C12809400158EAD /* CanvasView.swift */,
 				3B2F52932C127FD000158EAD /* DrawingView.swift */,
 			);
@@ -230,7 +236,9 @@
 				3B8FB6102C00E9C5005562A1 /* ArtisticHeartApp.swift in Sources */,
 				3B8FB6282C06A725005562A1 /* DetailView.swift in Sources */,
 				3B2F52922C0E95E200158EAD /* IndexView.swift in Sources */,
+				3BDE00D82C1D2374002D1DA2 /* TabSwitchView.swift in Sources */,
 				3BDE00D22C1B19E4002D1DA2 /* HomePageViewModel.swift in Sources */,
+				3BDE00D62C1D1D7F002D1DA2 /* AppEntryView.swift in Sources */,
 				3B2F52942C127FD000158EAD /* DrawingView.swift in Sources */,
 				3B2F528E2C0E8B0900158EAD /* HomePageView.swift in Sources */,
 				3B8FB6262C0510E5005562A1 /* Work.swift in Sources */,
